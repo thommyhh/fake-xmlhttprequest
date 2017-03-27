@@ -1,0 +1,20 @@
+{
+  "name": "fake-xmlhttprequest",
+  "version": "1.0.0",
+  "description": "A wrapper around the real XMLHttpRequest object to make it possible to catch certain (matched) calls and return mocked responses.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thommyhh/fake-xmlhttprequest.git"
+  },
+  "keywords": [
+    "xmlhttprequest",
+    "fake",
+    "mock"
+  ],
+  "author": "Thorben Nissen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thommyhh/fake-xmlhttprequest/issues"
+  },
+  "homepage": "https://github.com/thommyhh/fake-xmlhttprequest#readme"
+}
