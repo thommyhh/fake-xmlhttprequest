@@ -34,6 +34,8 @@ A response handler is a simple javascript object that contains the following pro
 * method [optional]: The http method to only match, e.g. GET or POST. The method is not checked if not set.
 * status: The http status code the faked request should return. Can be used to simulate 404 or 50x responses.
 * statusText: A matching http status text, e.g. "OK" for status 200.
+* headers [optional]: An object of response headers or a function that returns one. The object must contain the header
+name as property and the header value as the property's value.
 * responseTime [optional]: An integer or an array with to integers. If not set, the response is returned  immediately.
 * response: A response string or a function that returns a response. The url is given as the argument.
 If `url` is a regular expression, the complete match is the first argument, followed by all matching groups.
@@ -130,6 +132,24 @@ FakeXMLHttpRequest.addHandler({
     responseTime: [500, 3000],
     status: 200,
     statusText: 'OK',
+    proxy: function(completeMatch, keyword, data) {
+        // return the url to the file to fetch.
+    }
+});
+```
+
+## Using response headers
+The example above extended with a function, that returns response headers. The ```headers```
+function gets the same arguments as the ```response``` or ```proxy``` function.
+```javascript
+FakeXMLHttpRequest.addHandler({
+    url: /\/some\/search\/(keyword)/,
+    responseTime: [500, 3000],
+    status: 200,
+    statusText: 'OK',
+    headers: function(completeMatch, keyword, data) {
+        // return an object with response headers
+    },
     proxy: function(completeMatch, keyword, data) {
         // return the url to the file to fetch.
     }
