@@ -1,6 +1,6 @@
 {
   "name": "fake-xmlhttprequest",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A wrapper around the real XMLHttpRequest object to make it possible to catch certain (matched) calls and return mocked responses.",
   "repository": {
     "type": "git",
